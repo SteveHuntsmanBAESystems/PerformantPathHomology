@@ -51,6 +51,7 @@ for p = 0:pmax
     end
     % Sort list and get indexed inclusion
     [y.allPaths{p+1}, indices] = sortrows(y.allPaths{p+1});
+    indices(indices) = 1:length(indices);   % bug fix 15.03.2022 from MY
     for i = 1:C
         inclAll{i,p+1} = indices(inclAll{i,p+1});
     end
